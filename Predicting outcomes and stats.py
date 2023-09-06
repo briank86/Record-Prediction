@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed May 10 22:38:40 2023
-
 @author: brkea
 """
 
@@ -28,13 +26,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-
-#Trying to emulate https://www.codecademy.com/resources/blog/web-scraping-python-beautiful-soup-mlb-stats/
-#Makes sense to me but source code for baseball reference was difficult so using espn
-#Could try this gitHub to get info off Baseball Reference https://github.com/jldbc/pybaseball
-#couldn't get selenium to download. Following https://github.com/angelinepro/predicting_quality_starts/blob/master/webscraping/Baseball_Reference.ipynb
-
-
+Jump to line 220
 
 #making the data frame - hitting data; skipping 2019 and 2021 because of missing data and 2020 for the shortened season 
 # pred_df3 = pd.DataFrame()
@@ -225,8 +217,6 @@ import matplotlib.pyplot as plt
 
 
 
-
-
 #transfer the data from the R file
 #Starts in 2002 up to 2022. It excludes only 2020.
 
@@ -317,20 +307,6 @@ data = pd.read_csv('preprocessed_data.csv')
 
 #Getting rid of commas so that it could be converted to a float
 
-# for i in range(len(data['H'])):
-#     string = data._get_value(i, 'H')
-#     string = string.replace(',', '')
-#     data.replace(data._get_value(i, 'H'), string, inplace = True)
-
-# data = data.astype({'H':'int'})
-    
-# for i in range(len(data['TB'])):
-#     string = data._get_value(i, 'TB')
-#     string = string.replace(',', '')
-#     data.replace(data._get_value(i, 'TB'), string, inplace = True)
-
-# data = data.astype({'TB':'int'})
-
 for i in range(len(data['SO'])):
     string = data._get_value(i, 'SO')
     string = string.replace(',', '')
@@ -344,13 +320,7 @@ for i in range(len(data['SO-pitch'])):
     data.replace(data._get_value(i, 'SO-pitch'), string, inplace = True)
 
 data = data.astype({'SO-pitch':'int'})
-    
-# for i in range(len(data['H-pitch'])):
-#     string = data._get_value(i, 'H-pitch')
-#     string = string.replace(',', '')
-#     data.replace(data._get_value(i, 'H-pitch'), string, inplace = True)
 
-# data = data.astype({'H-pitch':'int'})
     
     
 
@@ -371,39 +341,9 @@ avgValue('SO-pitch')
 
 data.drop(columns=['GP', 'HR', 'BB', 'SO', 'QS', 'HR-pitch', 'BB-pitch', 'SO-pitch'], inplace = True)
 
-    
-
-    
 pred = pd.read_csv('2023_processed_data.csv')   
-#Getting rid of commas so that it could be converted to a float for the 2023 data
+    
 
-# for i in range(len(pred['H'])):
-#     string = pred._get_value(i, 'H')
-#     string = string.replace(',', '')
-#     pred.replace(pred._get_value(i, 'H'), string, inplace = True)
-    
-# for i in range(len(pred['TB'])):
-#     string = pred._get_value(i, 'TB')
-#     string = string.replace(',', '')
-#     pred.replace(pred._get_value(i, 'TB'), string, inplace = True)
-
-# pred = pred.astype({'TB':'int'})
-
-# for i in range(len(pred['SO'])):
-#     string = pred._get_value(i, 'SO')
-#     string = string.replace(',', '')
-#     pred.replace(pred._get_value(i, 'SO'), string, inplace = True)
-    
-# for i in range(len(pred['SO-pitch'])):
-#     string = pred._get_value(i, 'SO-pitch')
-#     string = string.replace(',', '')
-#     pred.replace(pred._get_value(i, 'SO-pitch'), string, inplace = True)
-    
-# for i in range(len(pred['H-pitch'])):
-#     string = pred._get_value(i, 'H-pitch')
-#     string = string.replace(',', '')
-#     pred.replace(pred._get_value(i, 'H-pitch'), string, inplace = True)
-    
 
 #average values so that it can be used to predict final wins when in the middle of the season
 def avgValue(ColName):
@@ -542,9 +482,6 @@ print('Regression')
 
 #Regression
 
-
-#try using random forest regression
-
 data.drop(columns=['Over 81 Wins'], inplace = True)
 data.insert(0, 'W', wins)
 
@@ -630,8 +567,6 @@ print(prediction)
 
 
 #used correlation heat map to figure out how the variables related to ensure low mulit-collinearity
-#Got rid of RBI or R (getting rid of RBI instead of R made classifier a little better but regession slightly worse)
-#dropped columns - RBI, H, SLG, TB, H-pitch, WHIP, R, OBP
 
 #make correlation heat map
 plt.subplots(figsize=(16, 6))
