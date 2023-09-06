@@ -3,34 +3,6 @@ library(dplyr)
 library(knitr)
 library(baseballr)
 
-# 
-# id <- playerid_lookup("Trout", "Mike")
-# fg_id <- id$fangraphs_id
-# fg_data_trout <- fg_batter_game_logs(playerid = fg_id, year = 2022)
-# 
-# 
-# fg_hleaders_data_2022 <- fg_batter_leaders(x = 2022, y = 2022)
-# 
-# id <- playerid_lookup("Eovaldi", "Nathan")
-# fg_id <- id$fangraphs_id
-# fg_data_eovaldi <- fg_pitcher_game_logs(playerid = fg_id, year = 2022)
-# 
-# fg_pleaders_data_2022 <- fg_pitcher_leaders(x = 2022, y = 2022)
-# 
-# fg_team_hit_2022 <- fg_team_batter(x = 2022, y = 2022)
-# 
-# fg_team_pitch_2022 <- fg_team_pitcher(x = 2022, y = 2022)
-# 
-# fg_milb_pitcher_game_logs()
-# 
-# fg_milb_batter_game_logs()
-# 
-# fg_park(2022)
-
-
-
-
-
 
 #2002 is the first year of all of the data being included
 
@@ -48,7 +20,6 @@ write.csv(pitcherTeamData, file = 'C:\\Users\\brkea\\Desktop\\fg_team_pitching.c
 
 write.csv(hitting2023, file = 'C:\\Users\\brkea\\Desktop\\fg_team_hitting_2023.csv')
 write.csv(pitching2023, file = 'C:\\Users\\brkea\\Desktop\\fg_team_pitching_2023.csv')
-
 
 
 
