@@ -6,6 +6,6 @@ I originally scraped data from ESPN so I could practice that skill but I was eve
 
 RESULTS:
 
-The initial results from the ESPN data and the Random Forest predictions were not super accurate. The regression and classifier models loved all of the pitching data compared to the hitting data. The regression weighed ERA by far the most at around 40%. It wasn't terribly far off on who the good teams were but it didn't predict anyone to win over 94 games. 
+The initial results from the ESPN data and the Random Forest predictions were not super accurate. The regression and classifier models loved all of the pitching data compared to the hitting data. The regression weighed ERA by far the most at around 40%. It wasn't terribly far off on who the good teams were but it didn't predict anyone to win over 94 games. I think there is also an argument to be made that the good teams this year have relied on offense in a way we haven't seen in a while (Rays, Rangers, etc). Thus it's possible the model may be off because of that. However, I suspect this just isn't the best way to predict the number of wins a team will have. I'm currently looking at making a model using more advanced stats to see if the traditional stats are bad for predictive value. 
 
 Currently, I'm working through a bug on the R file where I can no longer get data from Fangraphs and therefore the Python file won't run. This happened before I was able to copy down the results for everything. I will update this with the actual printed results when that is resolved. 
