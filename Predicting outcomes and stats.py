@@ -220,6 +220,7 @@ Jump to line 220
 #transfer the data from the R file
 #Starts in 2002 up to 2022. It excludes only 2020.
 
+#load data
 final_df_pitching = pd.read_csv('C:\\Users\\brkea\\Desktop\\espn_team_pitching.csv')
 final_df = pd.read_csv('C:\\Users\\brkea\\Desktop\\espn_team_hitting.csv')
 
@@ -227,7 +228,7 @@ pred_df_pitching = pd.read_csv('C:\\Users\\brkea\\Desktop\\espn_team_hitting_202
 pred_df = pd.read_csv('C:\\Users\\brkea\\Desktop\\espn_team_pitching_2023.csv')
 
 
-
+#drop na values
 final_df.dropna(axis = 1, inplace=True)
 final_df_pitching.dropna(axis = 1,inplace=True)
 
@@ -237,6 +238,7 @@ pred_df_pitching.dropna(axis = 1,inplace=True)
 
 
 #Combine the data frames
+#sorting by index so the pitching and hitting data frames will join correctly
 final_df_pitching.set_index('Team', inplace = True)
 final_df_pitching.sort_index(axis=0, ascending=True, inplace=True)
 
@@ -248,7 +250,7 @@ final_df = pd.concat([final_df, final_df_pitching], axis=1)
 
 
 
-
+#doing the same for the 2023 data
 pred_df_pitching.set_index('Team', inplace = True)
 pred_df_pitching.sort_index(axis=0, ascending=True, inplace=True)
 
