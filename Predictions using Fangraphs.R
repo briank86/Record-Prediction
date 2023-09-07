@@ -6,7 +6,9 @@ library(baseballr)
 
 #2002 is the first year of all of the data being included
 
-#Fangraphs data I'm saving to do prediction work on advanced stats in the future
+#Fangraphs data I'm saving to do prediction work on advanced stats in the future 
+#Jump to line 28 for this project's data
+
 batterTeamData <- fg_team_batter(x= 2002, y = 2019)
 batterTeamData <- rbind(batterTeamData, fg_team_batter(x=2021, y=2022))
 pitcherTeamData <- fg_team_pitcher(x= 2002, y = 2019)
